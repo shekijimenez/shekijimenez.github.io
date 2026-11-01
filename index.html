@@ -29,7 +29,17 @@
     .contenedor { width: min(1040px, 100% - 40px); margin-inline: auto; }
     header { padding: 72px 0 40px; }
     header h1 { font-size: clamp(2.4rem, 7vw, 4rem); margin-bottom: 16px; }
-    header p { font-size: 1.15rem; color: var(--cafe-suave); margin: 0; max-width: 52ch; }
+    header p { font-size: 1.15rem; color: var(--cafe-suave); margin: 0 0 24px; max-width: 52ch; }
+    .boton {
+      display: inline-block;
+      background: var(--cafe);
+      color: var(--blanco);
+      padding: 13px 26px;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .boton:hover { background: var(--rosa); }
 
     .muestras { display: grid; gap: 24px; padding-bottom: 72px; }
     .muestra {
@@ -58,6 +68,7 @@
     <div class="contenedor">
       <h1>Simple websites for small businesses in Budapest.</h1>
       <p>Hi, I'm Sheki, a Computer Science student at ELTE. I build one-page websites that help people find you, see what you offer and get in touch.</p>
+      <a class="boton" href="https://www.instagram.com/shekijimenez/">Message me on Instagram</a>
     </div>
   </header>
 
