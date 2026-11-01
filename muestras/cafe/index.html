@@ -3,118 +3,115 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Café Mandula | Sample website</title>
-  <meta name="description" content="Sample one-page website for a fictional neighbourhood café in Budapest.">
+  <title>Café Mandula | Sample café website by Sheki Jiménez</title>
+  <meta name="description" content="A sample website for a fictional neighbourhood café in Budapest, designed and built by Sheki Jiménez.">
+  <meta name="theme-color" content="#4a2f20">
+  <meta property="og:title" content="Café Mandula | Sample website">
+  <meta property="og:description" content="A sample website for a fictional neighbourhood café in Budapest.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://shekijimenez.github.io/muestras/cafe/img/bandeja.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%234a2f20'/%3E%3Cpath d='M16 6c5 5 7 9 7 13a7 7 0 0 1-14 0c0-4 2-8 7-13z' fill='%23f8f1e5'/%3E%3C/svg%3E">
+  <link rel="preload" href="../../fuentes/fraunces-500.woff2" as="font" type="font/woff2" crossorigin>
   <style>
+    @font-face { font-family: "Fraunces"; src: url("../../fuentes/fraunces-500.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+    @font-face { font-family: "DM Sans"; src: url("../../fuentes/dmsans-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+    @font-face { font-family: "DM Sans"; src: url("../../fuentes/dmsans-600.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+
     /* Cambia estos colores para adaptar la muestra a otro negocio */
     :root {
       --crema: #f8f1e5;
-      --beige: #eadcc6;
-      --cafe: #4a2f20;
-      --cafe-suave: #76563f;
-      --acento: #b5693a;
-      --blanco: #fffaf2;
+      --papel: #fffaf2;
+      --beige: #e6d6bd;
+      --cafe: #3f281b;
+      --cafe-suave: #6e503b;
+      --acento: #a4552b;
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--crema);
-      color: var(--cafe);
-      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-    }
-    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.15; margin: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+    body { margin: 0; background: var(--crema); color: var(--cafe); font-family: "DM Sans", "Segoe UI", Arial, sans-serif; font-size: 1.0625rem; line-height: 1.65; }
+    h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 500; line-height: 1.1; margin: 0; letter-spacing: -.01em; }
+    p { margin: 0; }
     a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--acento); outline-offset: 3px; border-radius: 4px; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
-    .contenedor { width: min(1040px, 100% - 40px); margin-inline: auto; }
-    section { padding: 64px 0; }
-    section h2 { font-size: 2rem; margin-bottom: 24px; }
+    .contenedor { width: min(1120px, 100% - 40px); margin-inline: auto; }
+    section { padding: 72px 0; }
+    .etiqueta { font-size: .8rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--acento); margin-bottom: 14px; }
+    h2 { font-size: clamp(2rem, 5vw, 3rem); }
 
-    /* Aviso de muestra */
-    .aviso {
-      background: var(--cafe);
-      color: var(--blanco);
-      text-align: center;
-      font-size: .85rem;
-      padding: 8px 16px;
-    }
+    .aviso { background: var(--cafe); color: var(--papel); font-size: .875rem; padding: 9px 0; }
+    .aviso .contenedor { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 16px; }
 
-    /* Navegación */
-    nav .contenedor {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      padding: 18px 0;
-    }
-    .logo { font-family: Georgia, serif; font-size: 1.3rem; font-weight: bold; text-decoration: none; }
-    .enlaces { display: flex; gap: 18px; font-size: .95rem; }
-    .enlaces a { text-decoration: none; }
+    nav .contenedor { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 0; }
+    .logo { display: flex; align-items: center; gap: 10px; font-family: "Fraunces", Georgia, serif; font-size: 1.3rem; text-decoration: none; }
+    .logo svg { width: 34px; height: 34px; flex: none; }
+    .enlaces { display: flex; gap: 20px; }
+    .enlaces a { text-decoration: none; padding: 6px 0; }
     .enlaces a:hover { color: var(--acento); }
 
-    /* Portada */
-    .portada { padding: 32px 0 64px; }
-    .portada .contenedor { display: grid; gap: 32px; align-items: center; }
-    .portada h1 { font-size: clamp(2.5rem, 7vw, 4.25rem); margin-bottom: 16px; }
-    .portada p { font-size: 1.15rem; color: var(--cafe-suave); margin: 0 0 24px; max-width: 46ch; }
-    .boton {
-      display: inline-block;
-      background: var(--acento);
-      color: var(--blanco);
-      padding: 13px 26px;
-      border-radius: 999px;
-      font-weight: 600;
-      text-decoration: none;
-    }
+    .portada { padding: 24px 0 72px; }
+    .portada .contenedor { display: grid; gap: 36px; align-items: center; }
+    .portada h1 { font-size: clamp(2.8rem, 8vw, 5rem); margin-bottom: 20px; }
+    .portada p { font-size: 1.2rem; color: var(--cafe-suave); margin-bottom: 28px; max-width: 42ch; }
+    .boton { display: inline-block; background: var(--acento); color: var(--papel); padding: 14px 28px; border-radius: 999px; font-weight: 600; text-decoration: none; transition: background .2s; }
     .boton:hover { background: var(--cafe); }
+    .foto-portada { aspect-ratio: 4 / 3; border-radius: 24px; overflow: hidden; }
 
-    /* Cambia las fotos en el HTML, en cada etiqueta img */
-    .foto {
-      display: block;
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
-      border-radius: 20px;
-      background: var(--beige);
-    }
+    .historia { background: var(--cafe); color: var(--papel); }
+    .historia .contenedor { display: grid; gap: 36px; align-items: center; }
+    .historia .etiqueta { color: #e2b48f; }
+    .historia h2 { margin-bottom: 18px; }
+    .historia p { max-width: 50ch; color: #eee0ce; }
+    .foto-historia { aspect-ratio: 1; border-radius: 24px; overflow: hidden; }
 
-    /* Carta */
-    .carta { background: var(--blanco); }
-    .columnas { display: grid; gap: 32px; }
-    .columnas h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--acento); }
+    .carta { background: var(--papel); }
+    .carta h2 { margin-bottom: 36px; }
+    .columnas { display: grid; gap: 40px; }
+    .columnas h3 { font-size: 1.5rem; margin-bottom: 8px; color: var(--acento); }
     .columnas ul { list-style: none; margin: 0; padding: 0; }
-    .columnas li {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--beige);
-    }
+    .columnas li { display: grid; grid-template-columns: 1fr auto; gap: 0 20px; padding: 14px 0; border-bottom: 1px solid var(--beige); }
+    .plato { font-weight: 600; }
+    .precio { white-space: nowrap; }
+    .detalle { grid-column: 1 / -1; font-size: .95rem; color: var(--cafe-suave); }
 
-    /* Visítanos */
-    .visita .contenedor { display: grid; gap: 32px; }
-    .horario { width: 100%; max-width: 380px; border-collapse: collapse; }
-    .horario td { padding: 6px 0; }
+    .visita .contenedor { display: grid; gap: 36px; align-items: center; }
+    .visita h2 { margin-bottom: 20px; }
+    .horario { width: 100%; max-width: 400px; border-collapse: collapse; margin: 20px 0 28px; }
+    .horario td { padding: 8px 0; border-bottom: 1px solid var(--beige); }
     .horario td:last-child { text-align: right; }
+    .foto-visita { aspect-ratio: 4 / 3; border-radius: 24px; overflow: hidden; }
 
-    footer { background: var(--cafe); color: var(--blanco); padding: 28px 0; font-size: .9rem; text-align: center; }
+    footer { background: var(--cafe); color: var(--papel); padding: 32px 0; font-size: .9rem; }
+    footer .contenedor { display: grid; gap: 8px; }
+    footer p { color: #eee0ce; }
 
-    @media (min-width: 760px) {
-      .portada .contenedor { grid-template-columns: 1fr 1fr; }
-      .foto { height: 420px; }
-      .columnas { grid-template-columns: 1fr 1fr; gap: 56px; }
-      .visita .contenedor { grid-template-columns: 1fr 1fr; align-items: center; }
+    @media (min-width: 820px) {
+      section { padding: 104px 0; }
+      .portada { padding: 32px 0 96px; }
+      .portada .contenedor { grid-template-columns: 1fr 1.1fr; gap: 64px; }
+      .historia .contenedor { grid-template-columns: .85fr 1fr; gap: 72px; }
+      .columnas { grid-template-columns: 1fr 1fr; gap: 72px; }
+      .visita .contenedor { grid-template-columns: 1fr 1.1fr; gap: 72px; }
     }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .boton { transition: none; } }
   </style>
 </head>
 <body>
-  <div class="aviso">Sample website. Café Mandula is a fictional café.</div>
-
-  <nav>
+  <div class="aviso">
     <div class="contenedor">
-      <a class="logo" href="#inicio">Café Mandula</a>
+      <span>Sample website. Café Mandula is a fictional café.</span>
+      <a href="../../index.html">← Back to Sheki's portfolio</a>
+    </div>
+  </div>
+
+  <nav aria-label="Main">
+    <div class="contenedor">
+      <a class="logo" href="#inicio">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#3f281b"/><path d="M20 8c6.5 6.5 9 11.500 9 16a9 9 0 0 1-18 0c0-4.500 2.500-9.500 9-16z" fill="#f8f1e5"/><path d="M20 15v15" stroke="#a4552b" stroke-width="1.600" stroke-linecap="round"/></svg>
+        Café Mandula
+      </a>
       <div class="enlaces">
         <a href="#carta">Menu</a>
         <a href="#visita">Visit</a>
@@ -127,33 +124,49 @@
       <div class="contenedor">
         <div>
           <h1>Your slow morning starts here.</h1>
-          <p>Good coffee, fresh pastries and a quiet corner to study or catch up with a friend.</p>
-          <a class="boton" href="#visita">Find us</a>
+          <p>Specialty coffee, pastries baked every morning and a quiet table for as long as you need it.</p>
+          <a class="boton" href="#carta">See the menu</a>
         </div>
-        <img class="foto" src="https://images.unsplash.com/photo-1749922217403-412f69429dc5?auto=format&fit=crop&w=1200&q=80" alt="Cozy café interior with people sitting at tables">
+        <div class="foto-portada">
+          <img src="img/interior.jpg" width="1100" height="733" alt="Inside a cozy café, with people talking at small tables" fetchpriority="high">
+        </div>
+      </div>
+    </section>
+
+    <section class="historia">
+      <div class="contenedor">
+        <div class="foto-historia">
+          <img src="img/capuccino.jpg" width="1100" height="1467" alt="A cappuccino with latte art and a small biscuit" loading="lazy">
+        </div>
+        <div>
+          <p class="etiqueta">Our story</p>
+          <h2>Named after the almond tree outside our door.</h2>
+          <p>Mandula means almond in Hungarian. We opened to be the kind of place your neighbourhood needs: friendly faces, honest prices and coffee made with care. Come to study, catch up with a friend or simply take a moment for yourself.</p>
+        </div>
       </div>
     </section>
 
     <section class="carta" id="carta">
       <div class="contenedor">
-        <h2>Menu</h2>
+        <p class="etiqueta">Menu</p>
+        <h2>Small menu, made well.</h2>
         <div class="columnas">
           <div>
             <h3>Coffee</h3>
             <ul>
-              <li><span>Espresso</span><span>800 Ft</span></li>
-              <li><span>Flat white</span><span>1,300 Ft</span></li>
-              <li><span>Cappuccino</span><span>1,200 Ft</span></li>
-              <li><span>Almond latte</span><span>1,500 Ft</span></li>
+              <li><span class="plato">Espresso</span><span class="precio">800 Ft</span><span class="detalle">Short, rich and chocolatey.</span></li>
+              <li><span class="plato">Cappuccino</span><span class="precio">1,200 Ft</span><span class="detalle">Espresso with silky steamed milk.</span></li>
+              <li><span class="plato">Flat white</span><span class="precio">1,300 Ft</span><span class="detalle">A double shot with a thin layer of milk.</span></li>
+              <li><span class="plato">Almond latte</span><span class="precio">1,500 Ft</span><span class="detalle">Our house favourite, with almond milk.</span></li>
             </ul>
           </div>
           <div>
             <h3>Something sweet</h3>
             <ul>
-              <li><span>Butter croissant</span><span>900 Ft</span></li>
-              <li><span>Banana bread</span><span>1,100 Ft</span></li>
-              <li><span>Cinnamon roll</span><span>1,200 Ft</span></li>
-              <li><span>Cookie of the day</span><span>800 Ft</span></li>
+              <li><span class="plato">Butter croissant</span><span class="precio">900 Ft</span><span class="detalle">Baked fresh every morning.</span></li>
+              <li><span class="plato">Banana bread</span><span class="precio">1,100 Ft</span><span class="detalle">Served warm, with salted butter.</span></li>
+              <li><span class="plato">Cinnamon roll</span><span class="precio">1,200 Ft</span><span class="detalle">Soft, sticky and hard to share.</span></li>
+              <li><span class="plato">Almond cake</span><span class="precio">1,300 Ft</span><span class="detalle">Our signature slice.</span></li>
             </ul>
           </div>
         </div>
@@ -163,23 +176,28 @@
     <section class="visita" id="visita">
       <div class="contenedor">
         <div>
-          <h2>Come say hi</h2>
+          <p class="etiqueta">Visit us</p>
+          <h2>Come say hi.</h2>
           <p>Sample Street 1, Budapest</p>
           <table class="horario">
             <tr><td>Monday to Friday</td><td>8:00–18:00</td></tr>
             <tr><td>Saturday</td><td>9:00–18:00</td></tr>
             <tr><td>Sunday</td><td>10:00–16:00</td></tr>
           </table>
-          <p>hello@example.com</p>
+          <a class="boton" href="mailto:hello@example.com">Email us</a>
         </div>
-        <img class="foto" src="https://images.unsplash.com/photo-1744638628542-12578d73179b?auto=format&fit=crop&w=1200&q=80" alt="Coffee and pastries on a wooden tray">
+        <div class="foto-visita">
+          <img src="img/bandeja.jpg" width="1100" height="1465" alt="Coffee and pastries on a wooden tray" loading="lazy">
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    Café Mandula · Sample website<br>
-    Photos by <a href="https://unsplash.com/photos/a-cozy-cafe-interior-with-customers-at-tables--gXbkR2TZmg">Virginia Marinova</a> and <a href="https://unsplash.com/photos/coffee-and-pastries-on-a-wooden-tray-Np4aW71utRo">Miraxh Tereziu</a> on Unsplash
+    <div class="contenedor">
+      <p>Café Mandula is a fictional business. Website designed and built by <a href="../../index.html">Sheki Jiménez</a>.</p>
+      <p>Photos on Unsplash by <a href="https://unsplash.com/photos/a-cozy-cafe-interior-with-customers-at-tables--gXbkR2TZmg">Virginia Marinova</a>, <a href="https://unsplash.com/photos/a-cappuccino-on-a-saucer-on-a-wooden-table-fIEN3ccZVMk">Margo</a> and <a href="https://unsplash.com/photos/coffee-and-pastries-on-a-wooden-tray-Np4aW71utRo">Miraxh Tereziu</a>.</p>
+    </div>
   </footer>
 </body>
 </html>

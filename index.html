@@ -3,90 +3,211 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sheki Jiménez | Websites for small businesses</title>
-  <meta name="description" content="Simple one-page websites for small businesses in Budapest.">
+  <title>Sheki Jiménez | Websites for small businesses in Budapest</title>
+  <meta name="description" content="One-page websites that help small businesses in Budapest get found and get contacted. Designed and built by Sheki Jiménez.">
+  <meta name="theme-color" content="#2b1f1a">
+  <meta property="og:title" content="Sheki Jiménez | Websites for small businesses in Budapest">
+  <meta property="og:description" content="One-page websites that help small businesses get found and get contacted.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shekijimenez.github.io/">
+  <meta property="og:image" content="https://shekijimenez.github.io/muestras/cafe/img/bandeja.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%232b1f1a'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='18' text-anchor='middle' fill='%23fbf6ee'%3ES%3C/text%3E%3C/svg%3E">
+  <link rel="preload" href="fuentes/fraunces-500.woff2" as="font" type="font/woff2" crossorigin>
   <style>
+    @font-face { font-family: "Fraunces"; src: url("fuentes/fraunces-500.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+    @font-face { font-family: "DM Sans"; src: url("fuentes/dmsans-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+    @font-face { font-family: "DM Sans"; src: url("fuentes/dmsans-600.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+
     :root {
-      --crema: #f8f1e5;
-      --beige: #eadcc6;
-      --cafe: #4a2f20;
-      --cafe-suave: #76563f;
-      --rosa: #a53f65;
-      --blanco: #fffaf2;
+      --fondo: #fbf6ee;
+      --papel: #ffffff;
+      --linea: #e9dfd0;
+      --tinta: #2b1f1a;
+      --suave: #65564c;
+      --acento: #a53f65;
     }
 
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--crema);
-      color: var(--cafe);
-      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-    }
-    h1, h2 { font-family: Georgia, "Times New Roman", serif; line-height: 1.15; margin: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+    body { margin: 0; background: var(--fondo); color: var(--tinta); font-family: "DM Sans", "Segoe UI", Arial, sans-serif; font-size: 1.0625rem; line-height: 1.65; }
+    h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 500; line-height: 1.1; margin: 0; letter-spacing: -.01em; }
+    p { margin: 0; }
     a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--acento); outline-offset: 3px; border-radius: 4px; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
-    .contenedor { width: min(1040px, 100% - 40px); margin-inline: auto; }
-    header { padding: 72px 0 40px; }
-    header h1 { font-size: clamp(2.4rem, 7vw, 4rem); margin-bottom: 16px; }
-    header p { font-size: 1.15rem; color: var(--cafe-suave); margin: 0 0 24px; max-width: 52ch; }
-    .boton {
-      display: inline-block;
-      background: var(--cafe);
-      color: var(--blanco);
-      padding: 13px 26px;
-      border-radius: 999px;
-      font-weight: 600;
-      text-decoration: none;
+    .contenedor { width: min(1120px, 100% - 40px); margin-inline: auto; }
+    section { padding: 72px 0; }
+    .etiqueta { font-size: .8rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--acento); margin-bottom: 14px; }
+    h2 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 36px; max-width: 22ch; }
+
+    nav .contenedor { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 0; }
+    .logo { font-family: "Fraunces", Georgia, serif; font-size: 1.15rem; text-decoration: none; white-space: nowrap; }
+    .enlaces { display: flex; gap: 14px; font-size: .95rem; }
+    .enlaces a { text-decoration: none; padding: 6px 0; }
+    .enlaces a:hover { color: var(--acento); }
+
+    .portada { padding: 48px 0 72px; }
+    .portada h1 { font-size: clamp(2.75rem, 8vw, 5.25rem); margin-bottom: 24px; max-width: 16ch; }
+    .portada p { font-size: 1.25rem; color: var(--suave); margin-bottom: 32px; max-width: 48ch; }
+    .boton { display: inline-block; background: var(--tinta); color: var(--fondo); padding: 14px 28px; border-radius: 999px; font-weight: 600; text-decoration: none; transition: background .2s; }
+    .boton:hover { background: var(--acento); }
+
+    .muestras { display: grid; gap: 24px; }
+    .muestra { display: block; background: var(--papel); border: 1px solid var(--linea); border-radius: 24px; overflow: hidden; text-decoration: none; transition: border-color .2s; }
+    .muestra:hover { border-color: var(--tinta); }
+    .muestra-foto { aspect-ratio: 16 / 10; }
+    .muestra-texto { padding: 24px; }
+    .muestra h3 { font-size: 1.6rem; margin-bottom: 6px; }
+    .muestra p { color: var(--suave); margin-bottom: 14px; }
+    .ver { font-weight: 600; color: var(--acento); }
+    .nota { margin-top: 20px; font-size: .95rem; color: var(--suave); }
+
+    .blanco { background: var(--papel); }
+    .pasos { list-style: none; margin: 0; padding: 0; display: grid; gap: 28px; counter-reset: paso; }
+    .pasos li { counter-increment: paso; border-top: 1px solid var(--linea); padding-top: 18px; }
+    .pasos li::before { content: counter(paso); font-family: "Fraunces", Georgia, serif; font-size: 1.5rem; color: var(--acento); }
+    .pasos h3 { font-size: 1.3rem; margin: 6px 0; }
+    .pasos p { color: var(--suave); }
+
+    .precios { display: grid; gap: 24px; }
+    .plan { background: var(--papel); border: 1px solid var(--linea); border-radius: 24px; padding: 28px; }
+    .plan h3 { font-size: 1.5rem; margin-bottom: 6px; }
+    .cifra { font-family: "Fraunces", Georgia, serif; font-size: 2.5rem; line-height: 1.2; margin-bottom: 14px; }
+    .plan ul { margin: 0; padding-left: 20px; color: var(--suave); }
+    .plan li { margin-bottom: 6px; }
+
+    .sobre p { max-width: 58ch; color: var(--suave); }
+    .sobre h2 { margin-bottom: 18px; }
+
+    .contacto { background: var(--tinta); color: var(--fondo); }
+    .contacto h2 { margin-bottom: 16px; }
+    .contacto .etiqueta { color: #eeb4c8; }
+    .contacto p:not(.etiqueta) { max-width: 50ch; color: #dccfc2; margin-bottom: 28px; }
+    .contacto .boton { background: var(--fondo); color: var(--tinta); }
+    .contacto .boton:hover { background: #eeb4c8; }
+
+    footer { padding: 24px 0; font-size: .9rem; color: var(--suave); }
+
+    @media (min-width: 820px) {
+      section { padding: 104px 0; }
+      .portada { padding: 72px 0 96px; }
+      .muestras { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .pasos { grid-template-columns: repeat(4, 1fr); }
+      .precios { grid-template-columns: 1fr 1fr; gap: 32px; }
     }
-    .boton:hover { background: var(--rosa); }
-
-    .muestras { display: grid; gap: 24px; padding-bottom: 72px; }
-    .muestra {
-      display: block;
-      background: var(--blanco);
-      border: 1px solid var(--beige);
-      border-radius: 20px;
-      padding: 28px;
-      text-decoration: none;
-    }
-    .muestra:hover { border-color: var(--cafe); }
-    .muestra h2 { font-size: 1.6rem; margin-bottom: 8px; }
-    .muestra p { margin: 0 0 16px; color: var(--cafe-suave); }
-    .ver { font-weight: 600; }
-    .belleza .ver { color: var(--rosa); }
-
-    footer { padding: 24px 0; border-top: 1px solid var(--beige); font-size: .9rem; }
-
-    @media (min-width: 760px) {
-      .muestras { grid-template-columns: 1fr 1fr; }
-    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .boton, .muestra { transition: none; } }
   </style>
 </head>
 <body>
-  <header>
+  <nav aria-label="Main">
     <div class="contenedor">
-      <h1>Simple websites for small businesses in Budapest.</h1>
-      <p>Hi, I'm Sheki, a Computer Science student at ELTE. I build one-page websites that help people find you, see what you offer and get in touch.</p>
-      <a class="boton" href="https://www.instagram.com/shekijimenez/">Message me on Instagram</a>
+      <a class="logo" href="#inicio">Sheki Jiménez</a>
+      <div class="enlaces">
+        <a href="#trabajo">Work</a>
+        <a href="#precios">Pricing</a>
+        <a href="#contacto">Contact</a>
+      </div>
     </div>
-  </header>
+  </nav>
 
-  <main class="contenedor muestras">
-    <a class="muestra" href="muestras/cafe/index.html">
-      <h2>Café Mandula</h2>
-      <p>A warm, cozy sample website for a neighbourhood café.</p>
-      <span class="ver">See sample →</span>
-    </a>
-    <a class="muestra belleza" href="muestras/belleza/index.html">
-      <h2>Petite Rózsa</h2>
-      <p>A soft, feminine sample website for a nail and lash studio.</p>
-      <span class="ver">See sample →</span>
-    </a>
+  <main id="inicio">
+    <section class="portada">
+      <div class="contenedor">
+        <h1>Websites that help people find your business.</h1>
+        <p>I design and build one-page websites for small businesses in Budapest, so customers can see what you offer and get in touch.</p>
+        <a class="boton" href="#contacto">Talk to me about your website</a>
+      </div>
+    </section>
+
+    <section id="trabajo">
+      <div class="contenedor">
+        <p class="etiqueta">Sample work</p>
+        <h2>See what yours could look like.</h2>
+        <div class="muestras">
+          <a class="muestra" href="muestras/cafe/index.html">
+            <div class="muestra-foto"><img src="muestras/cafe/img/bandeja.jpg" width="1100" height="1465" alt="Coffee and pastries on a wooden tray" loading="lazy"></div>
+            <div class="muestra-texto">
+              <h3>Café Mandula</h3>
+              <p>A warm, inviting website for a neighbourhood café.</p>
+              <span class="ver">View sample →</span>
+            </div>
+          </a>
+          <a class="muestra" href="muestras/belleza/index.html">
+            <div class="muestra-foto"><img src="muestras/belleza/img/unas.jpg" width="1100" height="1755" alt="Soft pink manicured nails" loading="lazy"></div>
+            <div class="muestra-texto">
+              <h3>Petite Rózsa</h3>
+              <p>A soft, feminine website for a nail and lash studio.</p>
+              <span class="ver">View sample →</span>
+            </div>
+          </a>
+        </div>
+        <p class="nota">Both businesses are fictional. I built these samples to show my style and how I work.</p>
+      </div>
+    </section>
+
+    <section class="blanco" id="proceso">
+      <div class="contenedor">
+        <p class="etiqueta">How it works</p>
+        <h2>Simple, from first message to launch.</h2>
+        <ol class="pasos">
+          <li><h3>We talk</h3><p>You tell me about your business and what your customers need to know.</p></li>
+          <li><h3>You send your content</h3><p>Your photos, prices, hours and logo. If you need help with the text, I'll guide you.</p></li>
+          <li><h3>I build it</h3><p>You see a private preview and can ask for changes.</p></li>
+          <li><h3>We go live</h3><p>I publish your website and show you how to request updates.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="precios">
+      <div class="contenedor">
+        <p class="etiqueta">Pricing</p>
+        <h2>Clear prices, agreed before we start.</h2>
+        <div class="precios">
+          <div class="plan">
+            <h3>Essential</h3>
+            <p class="cifra">€300</p>
+            <ul>
+              <li>One-page website, designed for phones and computers</li>
+              <li>Services or menu, opening hours, location and contact</li>
+              <li>Two rounds of changes</li>
+            </ul>
+          </div>
+          <div class="plan">
+            <h3>Complete</h3>
+            <p class="cifra">€500</p>
+            <ul>
+              <li>Everything in Essential</li>
+              <li>Photo gallery and a link to your booking system or WhatsApp</li>
+              <li>A second language, using a translation you provide</li>
+              <li>Help connecting your own domain</li>
+            </ul>
+          </div>
+        </div>
+        <p class="nota">Your domain name, if you want one, is paid for separately.</p>
+      </div>
+    </section>
+
+    <section class="blanco sobre" id="sobre">
+      <div class="contenedor">
+        <p class="etiqueta">About me</p>
+        <h2>Hi, I'm Sheki.</h2>
+        <p>I'm a Computer Science student at ELTE, originally from Costa Rica and now living in Budapest. I love the small places that make this city feel like home, and I want more people to be able to find them.</p>
+      </div>
+    </section>
+
+    <section class="contacto" id="contacto">
+      <div class="contenedor">
+        <p class="etiqueta">Contact</p>
+        <h2>Tell me about your business.</h2>
+        <p>Send me a message on Instagram with your business name and what you'd like your website to do.</p>
+        <a class="boton" href="https://www.instagram.com/shekijimenez/">Message me on Instagram</a>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <div class="contenedor">Both businesses are fictional samples.</div>
+    <div class="contenedor">© 2026 Sheki Jiménez · Budapest</div>
   </footer>
 </body>
 </html>

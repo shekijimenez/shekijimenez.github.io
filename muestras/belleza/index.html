@@ -3,124 +3,126 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Petite Rózsa | Sample website</title>
-  <meta name="description" content="Sample one-page website for a fictional nail and lash studio in Budapest.">
+  <title>Petite Rózsa | Sample nail and lash studio website by Sheki Jiménez</title>
+  <meta name="description" content="A sample website for a fictional nail and lash studio in Budapest, designed and built by Sheki Jiménez.">
+  <meta name="theme-color" content="#a53f65">
+  <meta property="og:title" content="Petite Rózsa | Sample website">
+  <meta property="og:description" content="A sample website for a fictional nail and lash studio in Budapest.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://shekijimenez.github.io/muestras/belleza/img/unas.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%23a53f65'/%3E%3Cpath d='M16 16C9 9 5 12 7 16c-2 4 2 7 9 0 7 7 11 4 9 0 2-4-2-7-9 0z' fill='%23fff6f8'/%3E%3C/svg%3E">
+  <link rel="preload" href="../../fuentes/cormorant-500.woff2" as="font" type="font/woff2" crossorigin>
   <style>
+    @font-face { font-family: "Cormorant"; src: url("../../fuentes/cormorant-500.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Cormorant"; src: url("../../fuentes/cormorant-500i.woff2") format("woff2"); font-weight: 500; font-style: italic; font-display: swap; }
+    @font-face { font-family: "DM Sans"; src: url("../../fuentes/dmsans-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+    @font-face { font-family: "DM Sans"; src: url("../../fuentes/dmsans-600.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+
     /* Cambia estos colores para adaptar la muestra a otro negocio */
     :root {
-      --fondo: #fff6f8;
-      --rosa-suave: #fbe3ea;
-      --rosa: #c9587f;
-      --rosa-oscuro: #a53f65;
-      --lila: #e9e0f6;
-      --texto: #4b2f3c;
-      --texto-suave: #7a5a68;
+      --fondo: #fff7f8;
+      --rosa-suave: #fbe6ec;
+      --rosa-linea: #f2cfda;
+      --rosa: #a53f65;
+      --rosa-oscuro: #7f2c4c;
+      --lila: #ece4f7;
+      --texto: #43283a;
+      --texto-suave: #6d5062;
       --blanco: #ffffff;
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--fondo);
-      color: var(--texto);
-      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-    }
-    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: normal; line-height: 1.15; margin: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+    body { margin: 0; background: var(--fondo); color: var(--texto); font-family: "DM Sans", "Segoe UI", Arial, sans-serif; font-size: 1.0625rem; line-height: 1.65; }
+    h1, h2, h3 { font-family: "Cormorant", Georgia, serif; font-weight: 500; line-height: 1.05; margin: 0; }
     h1 em, h2 em { color: var(--rosa); }
+    p { margin: 0; }
     a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--rosa); outline-offset: 3px; border-radius: 4px; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
-    .contenedor { width: min(1040px, 100% - 40px); margin-inline: auto; }
-    section { padding: 64px 0; }
-    section h2 { font-size: 2.1rem; margin-bottom: 24px; }
+    .contenedor { width: min(1120px, 100% - 40px); margin-inline: auto; }
+    section { padding: 72px 0; }
+    .etiqueta { font-size: .8rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--rosa); margin-bottom: 14px; }
+    h2 { font-size: clamp(2.5rem, 6vw, 3.75rem); }
 
-    /* Aviso de muestra */
-    .aviso {
-      background: var(--rosa-oscuro);
-      color: var(--blanco);
-      text-align: center;
-      font-size: .85rem;
-      padding: 8px 16px;
-    }
+    .aviso { background: var(--rosa-oscuro); color: var(--blanco); font-size: .875rem; padding: 9px 0; }
+    .aviso .contenedor { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 16px; }
 
-    /* Navegación */
-    nav .contenedor {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      padding: 18px 0;
-    }
-    .logo { font-family: Georgia, serif; font-style: italic; font-size: 1.35rem; text-decoration: none; }
-    .enlaces { display: flex; gap: 18px; font-size: .95rem; }
-    .enlaces a { text-decoration: none; }
-    .enlaces a:hover { color: var(--rosa-oscuro); }
+    nav .contenedor { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 0; }
+    .logo { display: flex; align-items: center; gap: 10px; font-family: "Cormorant", Georgia, serif; font-style: italic; font-size: 1.6rem; line-height: 1; text-decoration: none; }
+    .logo svg { width: 36px; height: 36px; flex: none; }
+    .enlaces { display: flex; gap: 20px; }
+    .enlaces a { text-decoration: none; padding: 6px 0; }
+    .enlaces a:hover { color: var(--rosa); }
 
-    /* Portada */
-    .portada { padding: 32px 0 64px; }
-    .portada .contenedor { display: grid; gap: 32px; align-items: center; }
-    .portada h1 { font-size: clamp(2.5rem, 7vw, 4.25rem); margin-bottom: 16px; }
-    .portada p { font-size: 1.15rem; color: var(--texto-suave); margin: 0 0 24px; max-width: 46ch; }
-    .boton {
-      display: inline-block;
-      background: var(--rosa-oscuro);
-      color: var(--blanco);
-      padding: 13px 26px;
-      border-radius: 999px;
-      font-weight: 600;
-      text-decoration: none;
-    }
-    .boton:hover { background: var(--texto); }
+    .portada { padding: 24px 0 72px; }
+    .portada .contenedor { display: grid; gap: 36px; align-items: center; }
+    .portada h1 { font-size: clamp(3.25rem, 9vw, 5.75rem); margin-bottom: 20px; }
+    .portada p { font-size: 1.2rem; color: var(--texto-suave); margin-bottom: 28px; max-width: 42ch; }
+    .boton { display: inline-block; background: var(--rosa); color: var(--blanco); padding: 14px 28px; border-radius: 999px; font-weight: 600; text-decoration: none; transition: background .2s; }
+    .boton:hover { background: var(--rosa-oscuro); }
+    .arco { border-radius: 999px 999px 24px 24px; overflow: hidden; aspect-ratio: 4 / 5; }
 
-    /* Cambia las fotos en el HTML, en cada etiqueta img */
-    .foto {
-      display: block;
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
-      border-radius: 160px 160px 20px 20px;
-      background: var(--rosa-suave);
-    }
-
-    /* Servicios */
     .servicios { background: var(--rosa-suave); }
+    .servicios h2 { margin-bottom: 36px; }
     .columnas { display: grid; gap: 24px; }
-    .tarjeta { background: var(--blanco); border-radius: 20px; padding: 24px; }
-    .tarjeta h3 { font-size: 1.4rem; margin-bottom: 10px; color: var(--rosa-oscuro); }
+    .tarjeta { background: var(--blanco); border-radius: 24px; overflow: hidden; }
+    .tarjeta-foto { aspect-ratio: 16 / 9; }
+    .tarjeta-texto { padding: 28px 24px; }
+    .tarjeta h3 { font-size: 2rem; margin-bottom: 10px; color: var(--rosa-oscuro); }
     .tarjeta ul { list-style: none; margin: 0; padding: 0; }
-    .tarjeta li {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--rosa-suave);
-    }
-    .tarjeta li:last-child { border-bottom: 0; }
+    .tarjeta li { display: grid; grid-template-columns: 1fr auto; gap: 0 20px; padding: 14px 0; border-bottom: 1px solid var(--rosa-linea); }
+    .tarjeta li:last-child { border-bottom: 0; padding-bottom: 0; }
+    .servicio { font-weight: 600; }
     .precio { white-space: nowrap; }
+    .detalle { grid-column: 1 / -1; font-size: .95rem; color: var(--texto-suave); }
 
-    /* Reservas */
-    .reservas .contenedor { display: grid; gap: 32px; align-items: center; }
-    .horario { width: 100%; max-width: 380px; border-collapse: collapse; margin-bottom: 16px; }
-    .horario td { padding: 6px 0; }
+    .promesa { text-align: center; }
+    .promesa h2 { max-width: 20ch; margin: 0 auto 18px; }
+    .promesa p:not(.etiqueta) { max-width: 54ch; margin-inline: auto; color: var(--texto-suave); }
+
+    .reservas { background: var(--lila); }
+    .reservas .contenedor { display: grid; gap: 36px; align-items: center; }
+    .reservas h2 { margin-bottom: 18px; }
+    .horario { width: 100%; max-width: 400px; border-collapse: collapse; margin: 20px 0 28px; }
+    .horario td { padding: 8px 0; border-bottom: 1px solid #d5c8e8; }
     .horario td:last-child { text-align: right; }
 
-    footer { background: var(--lila); padding: 28px 0; font-size: .9rem; text-align: center; }
+    .antes { background: var(--blanco); border-radius: 24px; padding: 28px 24px; }
+    .antes h3 { font-size: 2rem; margin-bottom: 12px; color: var(--rosa-oscuro); }
+    .antes ul { margin: 0; padding-left: 20px; color: var(--texto-suave); }
+    .antes li { margin-bottom: 8px; }
 
-    @media (min-width: 760px) {
-      .portada .contenedor { grid-template-columns: 1fr 1fr; }
-      .foto { height: 460px; border-radius: 230px 230px 20px 20px; }
-      .columnas { grid-template-columns: 1fr 1fr; }
-      .reservas .contenedor { grid-template-columns: 1fr 1fr; }
+    footer { background: var(--rosa-oscuro); color: var(--blanco); padding: 32px 0; font-size: .9rem; }
+    footer .contenedor { display: grid; gap: 8px; }
+
+    @media (min-width: 820px) {
+      section { padding: 104px 0; }
+      .portada { padding: 32px 0 96px; }
+      .portada .contenedor { grid-template-columns: 1.15fr 1fr; gap: 72px; }
+      .columnas { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .tarjeta-texto { padding: 32px; }
+      .reservas .contenedor { grid-template-columns: 1fr 1fr; gap: 72px; }
+      .antes { padding: 40px; }
     }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .boton { transition: none; } }
   </style>
 </head>
 <body>
-  <div class="aviso">Sample website. Petite Rózsa is a fictional studio.</div>
-
-  <nav>
+  <div class="aviso">
     <div class="contenedor">
-      <a class="logo" href="#inicio">Petite Rózsa</a>
+      <span>Sample website. Petite Rózsa is a fictional studio.</span>
+      <a href="../../index.html">← Back to Sheki's portfolio</a>
+    </div>
+  </div>
+
+  <nav aria-label="Main">
+    <div class="contenedor">
+      <a class="logo" href="#inicio">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#fbe6ec"/><path d="M20 20c-8-8-13-5-11 0-2 5 3 8 11 0 8 8 13 5 11 0 2-5-3-8-11 0z" fill="#a53f65"/><circle cx="20" cy="20" r="2.600" fill="#7f2c4c"/></svg>
+        Petite Rózsa
+      </a>
       <div class="enlaces">
         <a href="#servicios">Services</a>
         <a href="#reservas">Book</a>
@@ -133,43 +135,59 @@
       <div class="contenedor">
         <div>
           <h1>Soft nails, <em>pretty lashes,</em> a little time for you.</h1>
-          <p>A calm, friendly nail and lash studio in Budapest. English and Hungarian spoken.</p>
+          <p>A calm, friendly studio in Budapest, for everyday polish and special occasions alike.</p>
           <a class="boton" href="#reservas">Book your visit</a>
         </div>
-        <img class="foto" src="https://images.unsplash.com/photo-1610992015762-45dca7fa3a85?auto=format&fit=crop&w=1000&q=80" alt="Hand with light pink manicured nails">
+        <div class="arco">
+          <img src="img/unas.jpg" width="1100" height="1755" alt="A hand with soft pink manicured nails resting on white fabric" fetchpriority="high">
+        </div>
       </div>
     </section>
 
     <section class="servicios" id="servicios">
       <div class="contenedor">
-        <h2>Services</h2>
+        <p class="etiqueta">Services</p>
+        <h2>Choose your <em>treat.</em></h2>
         <div class="columnas">
-          <div class="tarjeta">
-            <h3>Nails</h3>
-            <ul>
-              <li><span>Classic manicure</span><span class="precio">6,000 Ft</span></li>
-              <li><span>Gel polish</span><span class="precio">9,000 Ft</span></li>
-              <li><span>Gel extensions</span><span class="precio">14,000 Ft</span></li>
-              <li><span>Simple nail art</span><span class="precio">from 1,000 Ft</span></li>
-            </ul>
-          </div>
-          <div class="tarjeta">
-            <h3>Lashes</h3>
-            <ul>
-              <li><span>Lash lift and tint</span><span class="precio">12,000 Ft</span></li>
-              <li><span>Classic extensions</span><span class="precio">16,000 Ft</span></li>
-              <li><span>Volume extensions</span><span class="precio">20,000 Ft</span></li>
-              <li><span>Lash refill</span><span class="precio">from 9,000 Ft</span></li>
-            </ul>
-          </div>
+          <article class="tarjeta">
+            <div class="tarjeta-foto"><img src="img/esmaltes.jpg" width="1100" height="1650" alt="Rows of colourful gel polish bottles on gold shelves" loading="lazy"></div>
+            <div class="tarjeta-texto">
+              <h3>Nails</h3>
+              <ul>
+                <li><span class="servicio">Classic manicure</span><span class="precio">6,000 Ft</span><span class="detalle">Shaping, cuticle care and polish. 45 minutes.</span></li>
+                <li><span class="servicio">Gel polish</span><span class="precio">9,000 Ft</span><span class="detalle">A glossy finish that lasts. 60 minutes.</span></li>
+                <li><span class="servicio">Gel extensions</span><span class="precio">14,000 Ft</span><span class="detalle">Your perfect length and shape. 90 minutes.</span></li>
+              </ul>
+            </div>
+          </article>
+          <article class="tarjeta">
+            <div class="tarjeta-foto"><img src="img/pestanas.jpg" width="1100" height="797" alt="Close-up of an eye with long, natural-looking lash extensions" loading="lazy"></div>
+            <div class="tarjeta-texto">
+              <h3>Lashes</h3>
+              <ul>
+                <li><span class="servicio">Lash lift and tint</span><span class="precio">12,000 Ft</span><span class="detalle">Your own lashes, lifted and darkened. 60 minutes.</span></li>
+                <li><span class="servicio">Classic extensions</span><span class="precio">16,000 Ft</span><span class="detalle">A soft, natural look. 90 minutes.</span></li>
+                <li><span class="servicio">Volume extensions</span><span class="precio">20,000 Ft</span><span class="detalle">Fuller and more dramatic. 120 minutes.</span></li>
+              </ul>
+            </div>
+          </article>
         </div>
+      </div>
+    </section>
+
+    <section class="promesa">
+      <div class="contenedor">
+        <p class="etiqueta">Why Petite Rózsa</p>
+        <h2>One client at a time, <em>never rushed.</em></h2>
+        <p>Your appointment is yours alone. Sit back, tell us what you love and leave feeling like yourself, only a little more polished.</p>
       </div>
     </section>
 
     <section class="reservas" id="reservas">
       <div class="contenedor">
         <div>
-          <h2>Book your <em>visit</em></h2>
+          <p class="etiqueta">Book</p>
+          <h2>See you <em>soon.</em></h2>
           <p>Sample Street 1, Budapest</p>
           <table class="horario">
             <tr><td>Tuesday to Friday</td><td>10:00–19:00</td></tr>
@@ -178,14 +196,23 @@
           </table>
           <a class="boton" href="mailto:hello@example.com">Email us to book</a>
         </div>
-        <img class="foto" src="https://images.unsplash.com/photo-1589710751893-f9a6770ad71b?auto=format&fit=crop&w=1000&q=80" alt="Lash artist applying eyelash extensions to a client">
+        <aside class="antes">
+          <h3>Before your visit</h3>
+          <ul>
+            <li>Tell us if you have any allergies or sensitive skin.</li>
+            <li>For lash treatments, please come without eye makeup.</li>
+            <li>Need to change your time? Just let us know a day before.</li>
+          </ul>
+        </aside>
       </div>
     </section>
   </main>
 
   <footer>
-    Petite Rózsa · Sample website<br>
-    Photos by <a href="https://unsplash.com/photos/hand-with-light-pink-manicured-nails-vtQHwU4F13s">Chelson Tamares</a> and <a href="https://unsplash.com/photos/eyelash-extensions-application-in-salon-sRSRuxkOuzI">Hayley Kim Studios</a> on Unsplash
+    <div class="contenedor">
+      <p>Petite Rózsa is a fictional business. Website designed and built by <a href="../../index.html">Sheki Jiménez</a>.</p>
+      <p>Photos on Unsplash by <a href="https://unsplash.com/photos/hand-with-light-pink-manicured-nails-vtQHwU4F13s">Chelson Tamares</a>, <a href="https://unsplash.com/photos/nail-polish-bottles-on-gold-shelves-OpjlRo-31SI">H&amp;CO</a> and <a href="https://unsplash.com/photos/a-close-up-of-a-persons-eye-with-long-lashes-GEct9d7zgos">Milky Way Lashes</a>.</p>
+    </div>
   </footer>
 </body>
 </html>
