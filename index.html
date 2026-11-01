@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sheki Jiménez | Websites for small businesses</title>
+  <meta name="description" content="Simple one-page websites for small businesses in Budapest.">
+  <style>
+    :root {
+      --crema: #f8f1e5;
+      --beige: #eadcc6;
+      --cafe: #4a2f20;
+      --cafe-suave: #76563f;
+      --rosa: #a53f65;
+      --blanco: #fffaf2;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--crema);
+      color: var(--cafe);
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+    h1, h2 { font-family: Georgia, "Times New Roman", serif; line-height: 1.15; margin: 0; }
+    a { color: inherit; }
+
+    .contenedor { width: min(1040px, 100% - 40px); margin-inline: auto; }
+    header { padding: 72px 0 40px; }
+    header h1 { font-size: clamp(2.4rem, 7vw, 4rem); margin-bottom: 16px; }
+    header p { font-size: 1.15rem; color: var(--cafe-suave); margin: 0; max-width: 52ch; }
+
+    .muestras { display: grid; gap: 24px; padding-bottom: 72px; }
+    .muestra {
+      display: block;
+      background: var(--blanco);
+      border: 1px solid var(--beige);
+      border-radius: 20px;
+      padding: 28px;
+      text-decoration: none;
+    }
+    .muestra:hover { border-color: var(--cafe); }
+    .muestra h2 { font-size: 1.6rem; margin-bottom: 8px; }
+    .muestra p { margin: 0 0 16px; color: var(--cafe-suave); }
+    .ver { font-weight: 600; }
+    .belleza .ver { color: var(--rosa); }
+
+    footer { padding: 24px 0; border-top: 1px solid var(--beige); font-size: .9rem; }
+
+    @media (min-width: 760px) {
+      .muestras { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="contenedor">
+      <h1>Simple websites for small businesses in Budapest.</h1>
+      <p>Hi, I'm Sheki, a Computer Science student at ELTE. I build one-page websites that help people find you, see what you offer and get in touch.</p>
+    </div>
+  </header>
+
+  <main class="contenedor muestras">
+    <a class="muestra" href="muestras/cafe/index.html">
+      <h2>Café Mandula</h2>
+      <p>A warm, cozy sample website for a neighbourhood café.</p>
+      <span class="ver">See sample →</span>
+    </a>
+    <a class="muestra belleza" href="muestras/belleza/index.html">
+      <h2>Petite Rózsa</h2>
+      <p>A soft, feminine sample website for a nail and lash studio.</p>
+      <span class="ver">See sample →</span>
+    </a>
+  </main>
+
+  <footer>
+    <div class="contenedor">Both businesses are fictional samples.</div>
+  </footer>
+</body>
+</html>

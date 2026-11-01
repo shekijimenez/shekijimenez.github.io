@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Café Mandula | Sample website</title>
+  <meta name="description" content="Sample one-page website for a fictional neighbourhood café in Budapest.">
+  <style>
+    /* Cambia estos colores para adaptar la muestra a otro negocio */
+    :root {
+      --crema: #f8f1e5;
+      --beige: #eadcc6;
+      --cafe: #4a2f20;
+      --cafe-suave: #76563f;
+      --acento: #b5693a;
+      --blanco: #fffaf2;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--crema);
+      color: var(--cafe);
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.15; margin: 0; }
+    a { color: inherit; }
+
+    .contenedor { width: min(1040px, 100% - 40px); margin-inline: auto; }
+    section { padding: 64px 0; }
+    section h2 { font-size: 2rem; margin-bottom: 24px; }
+
+    /* Aviso de muestra */
+    .aviso {
+      background: var(--cafe);
+      color: var(--blanco);
+      text-align: center;
+      font-size: .85rem;
+      padding: 8px 16px;
+    }
+
+    /* Navegación */
+    nav .contenedor {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 0;
+    }
+    .logo { font-family: Georgia, serif; font-size: 1.3rem; font-weight: bold; text-decoration: none; }
+    .enlaces { display: flex; gap: 18px; font-size: .95rem; }
+    .enlaces a { text-decoration: none; }
+    .enlaces a:hover { color: var(--acento); }
+
+    /* Portada */
+    .portada { padding: 32px 0 64px; }
+    .portada .contenedor { display: grid; gap: 32px; align-items: center; }
+    .portada h1 { font-size: clamp(2.5rem, 7vw, 4.25rem); margin-bottom: 16px; }
+    .portada p { font-size: 1.15rem; color: var(--cafe-suave); margin: 0 0 24px; max-width: 46ch; }
+    .boton {
+      display: inline-block;
+      background: var(--acento);
+      color: var(--blanco);
+      padding: 13px 26px;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .boton:hover { background: var(--cafe); }
+
+    /* Cambia las fotos en el HTML, en cada etiqueta img */
+    .foto {
+      display: block;
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 20px;
+      background: var(--beige);
+    }
+
+    /* Carta */
+    .carta { background: var(--blanco); }
+    .columnas { display: grid; gap: 32px; }
+    .columnas h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--acento); }
+    .columnas ul { list-style: none; margin: 0; padding: 0; }
+    .columnas li {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--beige);
+    }
+
+    /* Visítanos */
+    .visita .contenedor { display: grid; gap: 32px; }
+    .horario { width: 100%; max-width: 380px; border-collapse: collapse; }
+    .horario td { padding: 6px 0; }
+    .horario td:last-child { text-align: right; }
+
+    footer { background: var(--cafe); color: var(--blanco); padding: 28px 0; font-size: .9rem; text-align: center; }
+
+    @media (min-width: 760px) {
+      .portada .contenedor { grid-template-columns: 1fr 1fr; }
+      .foto { height: 420px; }
+      .columnas { grid-template-columns: 1fr 1fr; gap: 56px; }
+      .visita .contenedor { grid-template-columns: 1fr 1fr; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="aviso">Sample website. Café Mandula is a fictional café.</div>
+
+  <nav>
+    <div class="contenedor">
+      <a class="logo" href="#inicio">Café Mandula</a>
+      <div class="enlaces">
+        <a href="#carta">Menu</a>
+        <a href="#visita">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="inicio">
+    <section class="portada">
+      <div class="contenedor">
+        <div>
+          <h1>Your slow morning starts here.</h1>
+          <p>Good coffee, fresh pastries and a quiet corner to study or catch up with a friend.</p>
+          <a class="boton" href="#visita">Find us</a>
+        </div>
+        <img class="foto" src="https://images.unsplash.com/photo-1749922217403-412f69429dc5?auto=format&fit=crop&w=1200&q=80" alt="Cozy café interior with people sitting at tables">
+      </div>
+    </section>
+
+    <section class="carta" id="carta">
+      <div class="contenedor">
+        <h2>Menu</h2>
+        <div class="columnas">
+          <div>
+            <h3>Coffee</h3>
+            <ul>
+              <li><span>Espresso</span><span>800 Ft</span></li>
+              <li><span>Flat white</span><span>1,300 Ft</span></li>
+              <li><span>Cappuccino</span><span>1,200 Ft</span></li>
+              <li><span>Almond latte</span><span>1,500 Ft</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Something sweet</h3>
+            <ul>
+              <li><span>Butter croissant</span><span>900 Ft</span></li>
+              <li><span>Banana bread</span><span>1,100 Ft</span></li>
+              <li><span>Cinnamon roll</span><span>1,200 Ft</span></li>
+              <li><span>Cookie of the day</span><span>800 Ft</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="visita" id="visita">
+      <div class="contenedor">
+        <div>
+          <h2>Come say hi</h2>
+          <p>Sample Street 1, Budapest</p>
+          <table class="horario">
+            <tr><td>Monday to Friday</td><td>8:00–18:00</td></tr>
+            <tr><td>Saturday</td><td>9:00–18:00</td></tr>
+            <tr><td>Sunday</td><td>10:00–16:00</td></tr>
+          </table>
+          <p>hello@example.com</p>
+        </div>
+        <img class="foto" src="https://images.unsplash.com/photo-1744638628542-12578d73179b?auto=format&fit=crop&w=1200&q=80" alt="Coffee and pastries on a wooden tray">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Café Mandula · Sample website<br>
+    Photos by <a href="https://unsplash.com/photos/a-cozy-cafe-interior-with-customers-at-tables--gXbkR2TZmg">Virginia Marinova</a> and <a href="https://unsplash.com/photos/coffee-and-pastries-on-a-wooden-tray-Np4aW71utRo">Miraxh Tereziu</a> on Unsplash
+  </footer>
+</body>
+</html>
